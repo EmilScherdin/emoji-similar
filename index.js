@@ -4,10 +4,10 @@ var isEmoji = require('is-emoji');
 var emojiDict = require('emoji-dictionary');
 
 const similarEmoji = [
-  ['blush', 'smile', 'simple_smile', 'laughing', 'relaxed'],
-  ['kissing_heart', 'kissing_closed_eyes', 'kissing'],
-  ['heart', 'heartpulse', 'heartbeat', 'green_heart'],
-  ['facepunch', 'boom', 'raised_hands', 'clap']
+  ['joy', 'smile', 'simple_smile', 'laughing', 'relaxed', 'sweat_smile', 'grimacing'],
+  ['kissing_heart', 'kissing_closed_eyes', 'kissing', 'heart'],
+  ['heart', 'heartpulse', 'heartbeat', 'green_heart', 'blue_heart', 'purple_heart', 'two_hearts'],
+  ['facepunch', 'boom', 'raised_hands', 'clap', 'sparkles', 'muscle']
 ];
 
 var _getEmojiname = function(emoji) {
@@ -22,7 +22,7 @@ var getSimilar = function(emoji, count) {
 
   for (var i = 0; i < similarEmoji.length; i++)
     if(similarEmoji[i].indexOf(emojiName) > -1)
-      return count ? similarEmoji.filter(e => e !== emojiName).slice(0, count) : similarEmoji.filter(e => e !== emojiName);
+      return count ? similarEmoji.filter(e => e !== emojiName).slice(0, count)  similarEmoji.filter(e => e !== emojiName);
 
   return [];
 };
