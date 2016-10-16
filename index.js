@@ -22,7 +22,7 @@ var getSimilar = function(emoji, count) {
 
   for (var i = 0; i < similarEmoji.length; i++)
     if(similarEmoji[i].indexOf(emojiName) > -1)
-      return count ? similarEmoji.filter(e => e !== emojiName).slice(0, count)  similarEmoji.filter(e => e !== emojiName);
+      return count ? similarEmoji.filter(e => e !== emojiName).slice(0, count) : similarEmoji.filter(e => e !== emojiName);
 
   return [];
 };
