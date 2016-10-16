@@ -17,14 +17,27 @@ var _getEmojiname = function(emoji) {
   return emoji.indexOf(':') > -1 ? emoji.slice(1, emoji.length - 1) : emoji;
 };
 
-var getSimilar = function(emoji, count) {
+var getSimilar = function(emoji, count, random) {
   var emojiName = _getEmojiname(emoji);
 
-  for (var i = 0; i < similarEmoji.length; i++)
-    if(similarEmoji[i].indexOf(emojiName) > -1)
-      return count ? similarEmoji.filter(e => e !== emojiName).slice(0, count) : similarEmoji.filter(e => e !== emojiName);
+  var index = null;
+  for (var i = 0; i < similarEmoji.length; i++) {
+    if(similarEmoji[i].indexOf(emojiName) > -1) {
+      index = i;
+      break;
+    }
+  }
 
-  return [];
+  if (index === null)
+    return [];
+
+  var emojis = similarEmoji[index].filter(e => e !== emojiName);
+
+  if (random) {
+    emojis.sort(function() { return 0.5 - Math.random() });
+  }
+
+  return count ? emojis.slice(0, count) : emojis;
 };
 
 

@@ -8,9 +8,9 @@ Get array of similar Emojis
 How to use
 ----------
 ```
-getSimilar(emoji [, count]);
+getSimilar(emoji [, count, random]);
 ```
-   
+
 Example
 ```
 import getSimilar from 'emoji-similar';
@@ -24,6 +24,12 @@ getSimilar(':heartbeat:', 3);
 getSimilar('boom');
 // return list of all similar emoji
 
+getSimilar('boom', 4, true);
+// return list of 4 similar emoji in random order
+
+getSimilar('boom', null, true);
+// return list of all similar emoji in random order
+
 ```
 
 Installation
@@ -31,4 +37,3 @@ Installation
 ```
 npm i -S emoji-similar
 ```
-
