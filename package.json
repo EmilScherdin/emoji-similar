@@ -1,0 +1,23 @@
+{
+  "name": "emoji-similar",
+  "version": "1.0.0",
+  "description": "Simple library to get similar emoji",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "keywords": [
+    "emoji",
+    "similiar"
+  ],
+  "author": "emil.scherdin@laget.se",
+  "license": "ISC",
+  "dependencies": {
+    "emoji-dictionary": "^1.0.4",
+    "is-emoji": "^0.1.1",
+    "node-emoji": "^1.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}
