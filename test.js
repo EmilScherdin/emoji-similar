@@ -16,7 +16,14 @@ describe('getSimilar', function() {
 });
 
 describe('getSimilar', function() {
-  it('should return 3 similar emoji', function() {
-    assert.equal(3, getSimilar('😄', 3).length);
+  it('should return 4 similar emoji', function() {
+    assert.equal(4, getSimilar('😄', 4).length);
+  });
+});
+
+
+describe('getSimilar', function() {
+  it('should return all (4) similar emoji', function() {
+    assert.equal(4, getSimilar('facepunch').length);
   });
 });
